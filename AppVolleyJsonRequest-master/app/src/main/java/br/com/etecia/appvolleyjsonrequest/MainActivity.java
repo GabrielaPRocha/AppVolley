@@ -26,8 +26,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        //declaro os objetos xml para java
         codigo = findViewById(R.id.txtCodigo);
         nome = findViewById(R.id.txtNome);
         genero = findViewById(R.id.txtGenero);
@@ -38,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
         btnCarregaDados.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                startActivity(new Intent (getApplicationContext(),Listar_filmes.class))
                 JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.POST, url_json, null,
                         new Response.Listener<JSONObject>() {
                             @Override
